@@ -145,7 +145,62 @@ code {
 }
 @media (min-width:1024px){
   .quote_Card p{
-    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(34, 40, 41);
+    border-top-right-radius: 42px;
+    height: 206px;
+margin: 1px;
+padding: 47px;
+width: 250px;
+  
+  }
+   h1{
+    color: rgb(4, 8, 7);
+    font-size: 2.5rem;
+    text-align: center;
+  
+  }
+  .quote_body img{
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    width: 200px;
+  }
+}
+@media (min-width:1280px){
+  .quote_Card p{
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    margin: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(34, 40, 41);
+    border-top-right-radius: 42px;
+  
+  }
+   h1{
+    color: rgb(4, 8, 7);
+    font-size: 2.5rem;
+    text-align: center;
+  
+  }
+  .quote_body img{
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    width: 200px;
+  }
+}
+
+@media (min-width:1440px){
+  .quote_Card p{
+    width: 300px;
     height: 200px;
     padding: 50px;
     margin: 1px;
