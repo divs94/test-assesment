@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import {Grid}from "@material-ui/core"
+import "./App.css";
+import author from "./images/author.jpg";
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
+
+  const fetchPost = async () => {
+   
+      const response = await fetch(
+        "https://api.quotable.io/random"
+      );
+      const data = await response.json();
+      setPosts(data);
+       console.log("data is::", data)
+     
+  
+  };
+
+  useEffect(() => {
+    let interval = setInterval(()=>{
+    fetchPost(); }, 5000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>Our Author's Quote</h1>
+    
+    <Grid container item xs={12} sm={12} md={12} lg={12} className="quote_wrapper">
+    <Grid container item xs={12} sm={12} md={12} lg={12} className="quote_body">
+    <Grid container item xs={12} sm={12} md={6} lg={6} className="quote_Card"> 
+    <img src={author} alt=" "/> 
+     <p>{ posts.content}</p></Grid>
+    
+      </Grid>
+    </Grid>
+    </>
   );
 }
 
